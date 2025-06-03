@@ -14,8 +14,7 @@
 	<artifactId>training</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>HibernateWithoutSpringData</name>
-	<description>Demo project for Spring Boot</description>
-
+	<description>Training RESTful application with Hibernate + EntityManager and without Spring Data</description>
 
 	<properties>
 		<java.version>21</java.version>
@@ -67,6 +66,11 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!--<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.orm.version}</version>
+		</dependency>-->
 		<!-- ORM/Hibernate -->
 
 		<dependency>

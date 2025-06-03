@@ -17,3 +17,5 @@ spring:
       hibernate:
         dialect: PostgreSQLDialect
         format_sql: true
+  profiles:
+    active: hibernate

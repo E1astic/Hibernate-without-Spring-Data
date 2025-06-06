@@ -39,6 +39,7 @@ public class EmfClientRepositoryImpl implements ClientRepository {
                 .setParameter("name", updatedClient.getName())
                 .setParameter("age", updatedClient.getAge())
                 .setParameter("description", updatedClient.getDescription())
+                .setParameter("id", id)
                 .executeUpdate();
         return isUpdated != 0;
     }

@@ -1,7 +1,6 @@
 package ru.fil.training.config;
 
 import org.hibernate.SessionFactory;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -26,8 +25,8 @@ public class HibernateConfig {
 
         Properties hibernateProperties = new Properties();
         hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-        //hibernateProperties.put("hibernate.show_sql", "true");
-        //hibernateProperties.put("hibernate.format_sql", "true");
+        hibernateProperties.put("hibernate.show_sql", "true");
+        hibernateProperties.put("hibernate.format_sql", "true");
 
         sessionFactory.setHibernateProperties(hibernateProperties);
         return sessionFactory;

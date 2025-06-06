@@ -37,4 +37,20 @@ public class ClientService {
     public void addClient(ClientRequest client) {
         clientRepository.save(clientConverter.mapToClient(client));
     }
+
+    @Transactional
+    public void updateClient(int id, ClientRequest updatedClient) {
+        boolean isUpdated = clientRepository.updateById(id, updatedClient);
+        if(!isUpdated) {
+            throw new ClientNotFoundException(String.format("Клиент с id = %d не найден", id));
+        }
+    }
+
+    @Transactional
+    public void deleteClient(int id) {
+        boolean isDeleted = clientRepository.removeById(id);
+        if(!isDeleted) {
+            throw new ClientNotFoundException(String.format("Клиент с id = %d не найден", id));
+        }
+    }
 }
